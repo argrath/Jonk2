@@ -1,8 +1,10 @@
-use t::Utils;
 use Test::More;
 use DBI;
 use Jonk2;
 use Storable ();
+
+use lib '.';
+use t::Utils;
 
 my $dbh = t::Utils->setup;
 

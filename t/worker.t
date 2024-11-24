@@ -1,6 +1,8 @@
-use t::Utils;
 use Test::More;
 use Jonk2;
+
+use lib '.';
+use t::Utils;
 
 my $dbh = t::Utils->setup;
 

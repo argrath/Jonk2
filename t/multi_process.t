@@ -1,9 +1,11 @@
 use strict;
 use warnings;
-use t::Utils;
 use Test::More;
 use Test::SharedFork;
 use Jonk2;
+
+use lib '.';
+use t::Utils;
 
 my $dbh = t::Utils->setup;
 
