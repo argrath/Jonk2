@@ -1,6 +1,6 @@
 =head1 NAME
 
-Jonk::Cookbook::ForkModel - with Parallel::Prefork.
+Jonk2::Cookbook::ForkModel - with Parallel::Prefork.
 
 =head1 USAGE
 
@@ -11,7 +11,7 @@ prefork worker script:
     use warnings;
     use Parallel::Prefork;
     use DBI;
-    use Jonk;
+    use Jonk2;
     use Your::Worker;
 
     my $pm = Parallel::Prefork->new({
@@ -26,7 +26,7 @@ prefork worker script:
         $pm->start and next;
 
         my $dbh = DBI->connect('dbi:mysql:test','user','pass');
-        my $jonk = Jonk->new($dbh => {functions => [qw/worker_key/]});
+        my $jonk = Jonk2->new($dbh => {functions => [qw/worker_key/]});
 
         while (1) {
             if (my $job = $jonk->find_job) {

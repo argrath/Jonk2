@@ -1,6 +1,6 @@
 =head1 NAME
 
-Jonk::Cookbook::ErrorHandling - error handling enqueue and dequeue
+Jonk2::Cookbook::Basic - basic usage for Jonk2
 
 =head1 USAGE
 
@@ -10,14 +10,11 @@ enqueue script:
     use strict;
     use warnings;
     use DBI;
-    use Jonk;
+    use Jonk2
     
     my $dbh = DBI->connect('dbi:mysql:test','user','pass');
-    my $jonk = Jonk->new($dbh);
+    my $jonk = Jonk2->new($dbh);
     my $job_id = $jonk->insert('worker_key','job_data_here');
-    if ($jonk->errstr) {
-        die $jonk->errstr;
-    }
 
 worker script:
 
@@ -25,18 +22,14 @@ worker script:
     use strict;
     use warnings;
     use DBI;
-    use Jonk;
+    use Jonk2;
     use Your::Worker;
     
     my $dbh = DBI->connect('dbi:mysql:test','user','pass');
-    my $jonk = Jonk->new($dbh => {functions => [qw/worker_key/]});
+    my $jonk = Jonk2->new($dbh => {functions => [qw/worker_key/]});
     
     while (1) {
-        my $job = $jonk->find_job;
-        if ($jonk->errstr) {
-            die $jonk->errstr;
-        }
-        if ($job) {
+        if (my $job = $jonk->find_job) {
             Your::Worker->work($job);
         } else {
             sleep(3); # wait for 3 sec.

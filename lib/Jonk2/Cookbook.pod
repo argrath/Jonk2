@@ -1,0 +1,17 @@
+=head1 NAME
+
+Jonk2::Cookbook - recipes
+
+=head1 RECIPES
+
+L<Jonk2::Cookbook::Basic> - basic usage.
+
+L<Jonk2::Cookbook::ForkModel> - with Parallel::Prefork.
+
+L<Jonk2::Cookbook::LookupSpecificJob> - lookup specific job.
+
+L<Jonk2::Cookbook::ErrorHandling> - error handling enqueue and dequeue.
+
+L<Jonk2::Cookbook::RetryJob> - retry job with wait few minitus.
+
+=cut

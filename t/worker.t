@@ -1,11 +1,11 @@
 use t::Utils;
 use Test::More;
-use Jonk;
+use Jonk2;
 
 my $dbh = t::Utils->setup;
 
 subtest 'find_job' => sub {
-    my $client = Jonk->new($dbh, {functions => [qw/MyWorker/]});
+    my $client = Jonk2->new($dbh, {functions => [qw/MyWorker/]});
 
     my $job_id = $client->insert('MyWorker', 'arg');
     ok $job_id;
@@ -26,7 +26,7 @@ subtest 'find_job' => sub {
 };
 
 subtest 'find_job / with priority' => sub {
-    my $client = Jonk->new($dbh, {functions => [qw/MyWorker/]});
+    my $client = Jonk2->new($dbh, {functions => [qw/MyWorker/]});
 
     $client->insert('MyWorker', 'arg_10', {priority => 10});
     $client->insert('MyWorker', 'arg_30', {priority => 30});
@@ -60,7 +60,7 @@ subtest 'find_job / with priority' => sub {
 };
 
 subtest 'find_job / with run_after' => sub {
-    my $client = Jonk->new($dbh, {functions => [qw/MyWorker/]});
+    my $client = Jonk2->new($dbh, {functions => [qw/MyWorker/]});
 
     my $time = time() + 2;
     $client->insert('MyWorker', 'arg', {run_after => $time});
@@ -86,7 +86,7 @@ subtest 'find_job / with run_after' => sub {
 subtest 'find_job / with grabbed_until' => sub {
 
     {
-        my $client = Jonk->new($dbh, {functions => [qw/MyWorker/], default_grab_for => 2});
+        my $client = Jonk2->new($dbh, {functions => [qw/MyWorker/], default_grab_for => 2});
         $client->insert('MyWorker', 'arg');
 
         my $job = $client->find_job();
@@ -117,7 +117,7 @@ subtest 'find_job / with grabbed_until' => sub {
     }
 
     {
-        my $client = Jonk->new($dbh, {functions => ['MyWorker' => {grab_for => 5}], default_grab_for => 2});
+        my $client = Jonk2->new($dbh, {functions => ['MyWorker' => {grab_for => 5}], default_grab_for => 2});
         $client->insert('MyWorker', 'arg');
 
         my $job = $client->find_job();
@@ -151,7 +151,7 @@ subtest 'find_job / with grabbed_until' => sub {
 };
 
 subtest 'find_job / without functions' => sub {
-    my $client = Jonk->new($dbh);
+    my $client = Jonk2->new($dbh);
 
     $client->insert('MyWorker', 'arg');
 
@@ -160,7 +160,7 @@ subtest 'find_job / without functions' => sub {
 };
 
 subtest 'lookup_job' => sub {
-    my $client = Jonk->new($dbh, {functions => [qw/MyWorker/]});
+    my $client = Jonk2->new($dbh, {functions => [qw/MyWorker/]});
 
     my $job_id = $client->insert('MyWorker', 'arg');
     ok $job_id;
@@ -180,7 +180,7 @@ t::Utils->cleanup($dbh);
 
 subtest 'find_job / flexible job table name' => sub {
     my $dbh = t::Utils->setup("my_job");
-    my $client = Jonk->new($dbh, { table_name => 'my_job', functions => [qw/MyWorker/] });
+    my $client = Jonk2->new($dbh, { table_name => 'my_job', functions => [qw/MyWorker/] });
 
     my $job_id = $client->insert('MyWorker', 'arg');
     ok $job_id;
@@ -200,7 +200,7 @@ subtest 'find_job / flexible job table name' => sub {
 
 subtest 'lookup_job / flexible job table name' => sub {
     my $dbh = t::Utils->setup("my_job");
-    my $client = Jonk->new($dbh, { table_name => 'my_job', functions => [qw/MyWorker/] });
+    my $client = Jonk2->new($dbh, { table_name => 'my_job', functions => [qw/MyWorker/] });
 
     my $job_id = $client->insert('MyWorker', 'arg');
     ok $job_id;

@@ -1,11 +1,11 @@
 use t::Utils;
 use Test::More;
-use Jonk;
+use Jonk2;
 
 my $dbh = t::Utils->setup;
 
 subtest 'failed job' => sub {
-    my $client = Jonk->new($dbh, {functions => [qw/MyWorker/]});
+    my $client = Jonk2->new($dbh, {functions => [qw/MyWorker/]});
 
     my $job_id = $client->insert('MyWorker', 'arg');
     ok $job_id;
@@ -105,7 +105,7 @@ subtest 'failed job' => sub {
 };
 
 subtest 'error case' => sub {
-    my $client = Jonk->new($dbh, {functions => [qw/MyWorker/]});
+    my $client = Jonk2->new($dbh, {functions => [qw/MyWorker/]});
 
     {
         my $job_id = $client->insert('MyWorker', 'arg');

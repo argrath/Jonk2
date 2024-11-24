@@ -1,11 +1,11 @@
-This is Perl module Jonk.
+This is Perl module Jonk2.
 
 INSTALLATION
 
-Jonk installation is straightforward. If your CPAN shell is set up,
+Jonk2 installation is straightforward. If your CPAN shell is set up,
 you should just be able to do
 
-    % cpanm Jonk
+    % cpanm Jonk2
 
 Download it, unpack it, then build it as per the usual:
 
@@ -18,9 +18,9 @@ Then install it:
 
 DOCUMENTATION
 
-Jonk documentation is available as in POD. So you can do:
+Jonk2 documentation is available as in POD. So you can do:
 
-    % perldoc Jonk
+    % perldoc Jonk2
 
 to read the documentation online with your favorite pager.
 

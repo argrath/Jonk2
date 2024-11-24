@@ -37,7 +37,7 @@ sub _get_schema {
 sub _read_pod {
     my $type = shift;
 
-    open my $fh, '<', './lib/Jonk.pm';
+    open my $fh, '<', './lib/Jonk2.pm';
     my $do_read     = 0;
     my $read_schema = 0;
     my $schema='';

@@ -1,7 +1,7 @@
-package Jonk;
+package Jonk2;
 use strict;
 use warnings;
-use Jonk::Job;
+use Jonk2::Job;
 use Carp ();
 
 our $VERSION = '0.10_02';
@@ -75,7 +75,7 @@ sub _parse_functions {
 sub _verify_driver {
     my $dbh = shift;
     my $driver = $dbh->{Driver}{Name};
-    $driver =~ /(mysql|SQLite|Pg)/ ? $driver : Carp::croak('Jonk support only mysql,SQLite,Pg');
+    $driver =~ /(mysql|SQLite|Pg)/ ? $driver : Carp::croak('Jonk2 support only mysql,SQLite,Pg');
 }
 
 sub _settled_unixtime_query {
@@ -173,7 +173,7 @@ sub _grab_a_job {
     );
     my $grabbed = $sth->rows;
     $sth->finish;
-    $grabbed ? Jonk::Job->new($self => $row) : undef;
+    $grabbed ? Jonk2::Job->new($self => $row) : undef;
 }
 
 sub lookup_job {
@@ -245,14 +245,14 @@ __END__
 
 =head1 NAME
 
-Jonk - simple job tank manager.
+Jonk2 - simple job tank manager.
 
 =head1 SYNOPSIS
 
     use DBI; 
-    use Jonk;
+    use Jonk2;
     my $dbh = DBI->connect(...);
-    my $jonk = Jonk->new($dbh, {functions => [qw/MyWorker/]});
+    my $jonk = Jonk2->new($dbh, {functions => [qw/MyWorker/]});
     # insert job
     {
         $jonk->insert('MyWorker', 'arg');
@@ -268,17 +268,17 @@ Jonk - simple job tank manager.
 
 =head1 DESCRIPTION
 
-Jonk is simple job queue manager system
+Jonk2 is simple job queue manager system
 
 Job is saved and taken out. Besides, nothing is done.
 
-You may use Jonk to make original Job Queuing System.
+You may use Jonk2 to make original Job Queuing System.
 
 =head1 METHODS
 
-=head2 my $jonk = Jonk::Worker->new($dbh, [\%options]);
+=head2 my $jonk = Jonk2::Worker->new($dbh, [\%options]);
 
-Creates a new Jonk object, and returns the object.
+Creates a new Jonk2 object, and returns the object.
 
 $options is an optional settings.
 
@@ -290,7 +290,7 @@ $dbh is database handle.
 
 =item * $options->{functions}
 
-Key word of job which this Jonk instance looks for.
+Key word of job which this Jonk2 instance looks for.
 
 =over 4
 
@@ -359,7 +359,7 @@ job argument data.
 
 lookup a job from a database.
 
-returns Jonk::Job object.
+returns Jonk2::Job object.
 
 =over 4
 

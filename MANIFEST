@@ -10,14 +10,14 @@ inc/Module/Install/Metadata.pm
 inc/Module/Install/Repository.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
-lib/Jonk.pm
-lib/Jonk/Cookbook.pod
-lib/Jonk/Cookbook/Basic.pod
-lib/Jonk/Cookbook/ErrorHandling.pod
-lib/Jonk/Cookbook/ForkModel.pod
-lib/Jonk/Cookbook/LookupSpecificJob.pod
-lib/Jonk/Cookbook/RetryJob.pod
-lib/Jonk/Job.pm
+lib/Jonk2.pm
+lib/Jonk2/Cookbook.pod
+lib/Jonk2/Cookbook/Basic.pod
+lib/Jonk2/Cookbook/ErrorHandling.pod
+lib/Jonk2/Cookbook/ForkModel.pod
+lib/Jonk2/Cookbook/LookupSpecificJob.pod
+lib/Jonk2/Cookbook/RetryJob.pod
+lib/Jonk2/Job.pm
 Makefile.PL
 MANIFEST			This list of files
 META.yml

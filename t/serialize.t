@@ -1,14 +1,14 @@
 use t::Utils;
 use Test::More;
 use DBI;
-use Jonk;
+use Jonk2;
 use Storable ();
 
 my $dbh = t::Utils->setup;
 
 subtest '(de)serializer set each functions' => sub {
     my $serialized_arg;
-    my $jonk = Jonk->new($dbh, {
+    my $jonk = Jonk2->new($dbh, {
         functions => [
             'MyWorker' => {
                 serializer   => sub {$serialized_arg = Storable::nfreeze($_[0])},
@@ -56,7 +56,7 @@ subtest '(de)serializer set each functions' => sub {
 
 subtest '(de)serializer set global' => sub {
     my $serialized_arg;
-    my $jonk = Jonk->new($dbh, {
+    my $jonk = Jonk2->new($dbh, {
         functions => [qw/MyWorker/],
         default_serializer   => sub {$serialized_arg = Storable::nfreeze($_[0])},
         default_deserializer => sub {Storable::thaw($_[0])},

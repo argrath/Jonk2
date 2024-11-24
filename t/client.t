@@ -1,12 +1,12 @@
 use t::Utils;
 use Test::More;
 use DBI;
-use Jonk;
+use Jonk2;
 
 my $dbh = t::Utils->setup;
 
 subtest 'insert' => sub {
-    my $jonk = Jonk->new($dbh);
+    my $jonk = Jonk2->new($dbh);
 
     my $job_id = $jonk->insert('MyWorker', 'arg');
     ok $job_id;
@@ -26,7 +26,7 @@ subtest 'insert' => sub {
 };
 
 subtest 'error handling' => sub {
-    my $jonk = Jonk->new($dbh, +{table_name => 'jonk_job'});
+    my $jonk = Jonk2->new($dbh, +{table_name => 'jonk_job'});
 
     my $job_id = $jonk->insert('MyWorker', 'arg');
     ok not $job_id;
@@ -34,7 +34,7 @@ subtest 'error handling' => sub {
 };
 
 subtest 'insert / set priority' => sub {
-    my $jonk = Jonk->new($dbh);
+    my $jonk = Jonk2->new($dbh);
 
     my $job_id = $jonk->insert('MyWorker', 'arg', { priority => 10 });
     ok $job_id;
@@ -53,7 +53,7 @@ t::Utils->cleanup($dbh);
 
 subtest 'insert / flexible job table name' => sub {
     my $dbh = t::Utils->setup("my_job");
-    my $jonk = Jonk->new($dbh, +{table_name => "my_job"});
+    my $jonk = Jonk2->new($dbh, +{table_name => "my_job"});
 
     my $job_id = $jonk->insert('MyWorker', 'arg');
     ok $job_id;

@@ -1,6 +1,6 @@
 use inc::Module::Install;
-name 'Jonk';
-all_from 'lib/Jonk.pm';
+name 'Jonk2';
+all_from 'lib/Jonk2.pm';
 
 requires 'DBI';
 
