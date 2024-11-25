@@ -1,40 +1,32 @@
 Revision history for Perl extension Jonk2
 
-0.10_02
-   2011-02-08
+0.10_02 2011-02-08
         - refactoring code.
         - can set (de)serializer each func or global.
         - can set priority by $job->failed.
         - enqueue_time change format to unixtime.
 
-0.10_01
-   2011-01-24
-        [ INCOMPATIBLE CHANGE!! ]
+0.10_01 2011-01-24
+        < INCOMPATIBLE CHANGE!! >
         - many api move to Jonk.
         - Jonk::Client, Jonk::Worker is removed.
         - create Jonk::Job.
 
-0.06
-   2010-12-16
+0.06 2010-12-16
         - FIXED : some pod.
 
-0.05
-   2010-12-01
+0.05 2010-12-01
         - FIXED : no use Pod::Simple for testing.
 
-0.04
-   2010-11-29
+0.04 2010-11-29
         - FIXED : requires 'DBI' for Makefile.PL.
 
-0.03
-   2010-11-28
+0.03 2010-11-28
         - FIXED : test use DBD::SQLite.
 
-0.02
-   2010-11-26
+0.02 2010-11-26
         - ADD   : more document.
         - FIXED : Client->_insert_id on PostgreSQL (thanks fujiwara.)
 
-0.01
-   2010-11-25
+0.01 2010-11-25
         - original version
