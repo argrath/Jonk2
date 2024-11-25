@@ -1,0 +1,78 @@
+{
+   "abstract" : "simple job tank manager.",
+   "author" : [
+      "Atsushi Kobayashi <nekokak _at_ gmail _dot_ com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Minilla/v3.1.15, CPAN::Meta::Converter version 2.150010",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : 2
+   },
+   "name" : "Jonk2",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "inc",
+         "share",
+         "eg",
+         "examples",
+         "author",
+         "builder"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Module::Build::Tiny" : "0.035"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "Test::CPAN::Meta" : "0",
+            "Test::MinimumVersion::Fast" : "0.04",
+            "Test::PAUSE::Permissions" : "0.07",
+            "Test::Pod" : "1.41",
+            "Test::Spellunker" : "v0.2.7"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "DBI" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "DBD::SQLite" : "0",
+            "Test::More" : "0.96",
+            "Test::SharedFork" : "0.15"
+         }
+      }
+   },
+   "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/argrath/Jonk2/issues"
+      },
+      "homepage" : "https://github.com/argrath/Jonk2",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/argrath/Jonk2.git",
+         "web" : "https://github.com/argrath/Jonk2"
+      }
+   },
+   "version" : "0.10_02",
+   "x_authority" : "cpan:ARGRATH",
+   "x_contributors" : [
+      "Atsushi Kobayashi <nekokak@gmail.com>",
+      "SHIRAKATA Kentaro <argrath@ub32.org>",
+      "fujiwara <fujiwara.shunichiro@gmail.com>",
+      "tokuhirom <tokuhirom@gmail.com>"
+   ],
+   "x_serialization_backend" : "JSON::PP version 4.06",
+   "x_static_install" : 1
+}
