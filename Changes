@@ -1,5 +1,9 @@
 Revision history for Perl extension Jonk2
 
+0.10_99 Not Released
+        - do not use Try::Tiny
+        - typo fix
+
 0.10_02 2011-02-08
         - refactoring code.
         - can set (de)serializer each func or global.
