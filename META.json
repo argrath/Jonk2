@@ -1,6 +1,7 @@
 {
    "abstract" : "simple job tank manager.",
    "author" : [
+      "SHIRAKATA Kentaro <argrath@ub32.org>",
       "Atsushi Kobayashi <nekokak _at_ gmail _dot_ com>"
    ],
    "dynamic_config" : 0,

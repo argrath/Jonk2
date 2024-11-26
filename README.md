@@ -171,13 +171,9 @@ get most recent error infomation.
 
 [TheSchwartz](https://metacpan.org/pod/TheSchwartz)
 
-# SUPPORT
-
-    irc: #jonk@irc.perl.org
-
 # REPOSITORY
 
-    git clone git://github.com/nekokak/p5-Jonk.git
+    git clone https://github.com/argrath/Jonk2.git
 
 # CONTRIBUTORS
 
@@ -189,7 +185,9 @@ fujiwara
 
 # AUTHOR
 
-Atsushi Kobayashi &lt;nekokak \_at\_ gmail \_dot\_ com>
+SHIRAKATA Kentaro &lt;argrath@ub32.org&gt;
+
+Jonk, by Atsushi Kobayashi &lt;nekokak \_at\_ gmail \_dot\_ com>
 
 # LICENSE
 

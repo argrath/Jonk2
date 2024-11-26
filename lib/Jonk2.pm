@@ -432,13 +432,9 @@ L<Qudo>
 
 L<TheSchwartz>
 
-=head1 SUPPORT
-
-  irc: #jonk@irc.perl.org
-
 =head1 REPOSITORY
 
-  git clone git://github.com/nekokak/p5-Jonk.git
+  git clone https://github.com/argrath/Jonk2.git
 
 =head1 CONTRIBUTORS
 
@@ -450,7 +446,9 @@ fujiwara
 
 =head1 AUTHOR
 
-Atsushi Kobayashi E<lt>nekokak _at_ gmail _dot_ comE<gt>
+SHIRAKATA Kentaro E<lt>argrath@ub32.orgE<gt>
+
+Jonk, by Atsushi Kobayashi E<lt>nekokak _at_ gmail _dot_ comE<gt>
 
 =head1 LICENSE
 
